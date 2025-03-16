@@ -43,3 +43,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     addRiskItem("Market Fluctuations", "High", "Finance");
 });
+// Task 4: Risk Categorization
+function addRiskItem(riskName, riskLevel, department) {
+    const riskCard = document.createElement("div");
+    riskCard.classList.add("riskCard", riskLevel.toLowerCase());
+
+    riskCard.innerHTML = `
+        <strong>${riskName}</strong> - ${riskLevel} - ${department}
+        <button class="resolveBtn">Resolve</button>
+    `;
+
+    riskCard.querySelector(".resolveBtn").addEventListener("click", () => {
+        riskCard.remove();
+    });
+
+    riskDashboard.appendChild(riskCard);
+}
+
+addRiskItem("Cybersecurity Threat", "High", "IT");
+addRiskItem("HR Compliance Issue", "Low", "Human Resources");
