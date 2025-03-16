@@ -62,3 +62,15 @@ function addRiskItem(riskName, riskLevel, department) {
 
 addRiskItem("Cybersecurity Threat", "High", "IT");
 addRiskItem("HR Compliance Issue", "Low", "Human Resources");
+// Task 5: Bulk Risk Updates
+document.getElementById("increaseRisk").addEventListener("click", () => {
+    document.querySelectorAll(".riskCard").forEach(card => {
+        if (card.classList.contains("low")) {
+            card.classList.replace("low", "medium");
+            card.innerHTML = card.innerHTML.replace("Low", "Medium");
+        } else if (card.classList.contains("medium")) {
+            card.classList.replace("medium", "high");
+            card.innerHTML = card.innerHTML.replace("Medium", "High");
+        }
+    });
+});
