@@ -74,3 +74,7 @@ document.getElementById("increaseRisk").addEventListener("click", () => {
         }
     });
 });
+// Task 6: Handling Event Propagation
+riskCard.addEventListener("click", (event) => {
+    event.stopPropagation();
+});
